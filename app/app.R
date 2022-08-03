@@ -9,18 +9,18 @@ ui = fluidPage(
     theme = shinytheme("yeti"),
 
     # Application title
-    titlePanel("New Franchise Initial Cost Prediction with Regression Model"),
+    titlePanel(h1("Franchise Starting Cost Prediction with Regression Model", align = "center")),
 
     fluidRow(
-        column(4, h2("Data"), tableOutput("dataTableID")),
-        column(8, plotOutput("regressionGraphID"))
+        column(4, align = "center", h2("Data"), tableOutput("dataTableID")),
+        column(8, align = "center", plotOutput("regressionGraphID"))
     ),
     fluidRow(
-        column(6, h2("Franchise annual cost"),
+        column(4, align = "center", h2("Franchise annual cost"),
                numericInput("newValueID", "Insert annual cost: ", 1500, min = 1, max = 9999999),
                actionButton("buttonID", "Run Prediction")
         ),
-        column(6, h2(textOutput("resultTextID")))
+        column(8, align = "center", h2(textOutput("resultTextID")))
     )
 
 )
