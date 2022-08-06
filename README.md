@@ -11,7 +11,9 @@ The user interface for this simple application can be seen next:
 
 ![ui_franchise-cost-regression](https://user-images.githubusercontent.com/33037020/183149311-747c241c-9481-482a-b580-fd3acf6e7a3f.JPG)
 
-*A [Shiny] web app is an R framework provided along with RStudio that allows its users to develop web apps using R and embedded web languages, such as CSS and HTML. Shiny apps focus on objectiveness and simplicity: only one or two R scripts have all the code for the app.*
+*[Shiny] is a framework that allows users to develop web apps using R and embedded web languages, such as CSS and HTML. Shiny apps focus on objectiveness and simplicity: only one or two R scripts have all the code for the app.*
+
+*This app development started with knowledge and tools discussed during the course "Data Science Bootcamp" by Fernando Amaral. The app has been upgraded and personalized, adding new functionalities.*
 
 [//]: #
 
