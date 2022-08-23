@@ -15,15 +15,21 @@ ui = fluidPage(
                   Regression Model"),
 
     fluidRow(
-        column(4, align = "center", h2("Data"), tableOutput("dataTableID")),
-        column(8, align = "center", plotOutput("regressionGraphID"))
+        column(4, align = "center",
+               h2("Data"),
+               tableOutput("dataTableID")),
+        column(8, align = "center",
+               plotOutput("regressionGraphID"))
     ),
     fluidRow(
-        column(4, align = "center", h2("Franchise annual cost"),
-               numericInput("newValueID", "Insert annual cost: ", 1500, min = 1, max = 9999999),
+        column(4, align = "center",
+               h2("Franchise annual cost"),
+               numericInput("newValueID", "Insert annual cost: ", value = 1500,
+                            min = 1, max = 9999999),
                actionButton("buttonID", "Run Prediction")
         ),
-        column(8, align = "center", h2(textOutput("resultTextID")))
+        column(8, align = "center",
+               h2(textOutput("resultTextID")))
     )
 
 )
@@ -41,9 +47,14 @@ server = function(input, output) {
     
     observeEvent(input$buttonID, {
         value_regression = input$newValueID
-        prev = predict(model, data.frame(FranchiseAnnualCost = eval(parse(text = value_regression))))
-        prev = paste0("Predicted initial cost: ", round(prev, 2), "$")
-        output$resultTextID = renderText({prev})
+        prediction = predict(
+            model,
+            data.frame(FranchiseAnnualCost = eval(parse(text = value_regression)))
+        )
+        prediction = paste0("Predicted initial cost: ", round(prediction, 2), "$")
+        output$resultTextID = renderText({
+            prediction
+        })
     })
 }
 
