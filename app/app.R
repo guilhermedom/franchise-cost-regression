@@ -9,7 +9,10 @@ ui = fluidPage(
     theme = shinytheme("yeti"),
 
     # Application title
-    titlePanel(h1("Franchise Starting Cost Prediction with Regression Model", align = "center")),
+    titlePanel(h1(align = "center", "Franchise Starting Cost Prediction with
+                  Regression Model"),
+               windowTitle = "Franchise Starting Cost Prediction with
+                  Regression Model"),
 
     fluidRow(
         column(4, align = "center", h2("Data"), tableOutput("dataTableID")),
