@@ -25,7 +25,7 @@ ui = fluidPage(
         column(4, align = "center",
                h2("Franchise annual cost"),
                numericInput("newValueID", "Insert annual cost: ", value = 1500,
-                            min = 1, max = 9999999),
+                            min = 1),
                actionButton("buttonID", "Run Prediction")
         ),
         column(8, align = "center",
